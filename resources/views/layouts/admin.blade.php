@@ -27,6 +27,7 @@
 
     <!-- Livewire js -->
     @livewireStyles
+
 </head>
 
 <body>
@@ -67,6 +68,7 @@
 
     <!--Livewire js -->
     @livewireScripts
+    @stack('script')
 </body>
 
 </html>
