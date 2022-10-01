@@ -13,6 +13,7 @@ class Index extends Component
     protected $paginationTheme = 'bootstrap';
 
     public $category_id;
+    public $search = '';
 
     // Getting id
     public function deleteCategory($category_id){
@@ -36,7 +37,7 @@ class Index extends Component
 
     public function render()
     {
-        $categories =Category::orderby('id','DESC')->paginate(10);
+        $categories =Category::where('name', 'like', '%'.$this->search.'%')->orderby('id','DESC')->paginate(10);
         return view('livewire.admin.category.index',['categories'=>$categories]);
     }
 }

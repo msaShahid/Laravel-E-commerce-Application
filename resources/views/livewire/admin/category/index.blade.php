@@ -37,8 +37,10 @@
         <div class="card">
             <div class="card-header">
                 <h3>Category
+                
                     <a href="{{ url('admin/category/create') }}" class="btn btn-primary btn-sm float-end">Add
                         Category</a>
+                        <input type="search" wire:model="search" class="form-control border border-2 rounded-pill  float-end mx-2" placeholder="Type here to search" style="width:250px">
                 </h3>
             </div>
             <div class="card-body">

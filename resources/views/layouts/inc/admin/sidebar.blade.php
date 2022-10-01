@@ -21,8 +21,8 @@
             </a>
             <div class="collapse" id="ui-category">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category') }}">Add Category</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Update Category</a>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category/create') }}">Add Category</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category') }}">Update Category</a>
                     </li>
                 </ul>
             </div>
@@ -37,13 +37,13 @@
             <div class="collapse" id="ui-product">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="#">Product 1</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Product 2</a>
+                    <li class="nav-item"> <a class="nav-link" href="#">Product 2</a>
                     </li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="{{ url('admin/brands') }}">
                 <i class="mdi mdi-view-headline menu-icon"></i>
                 <span class="menu-title">Brands</span>
             </a>
@@ -58,7 +58,7 @@
             <div class="collapse" id="ui-users">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Admin </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Users</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Users</a></li>
                 </ul>
             </div>
         </li>
