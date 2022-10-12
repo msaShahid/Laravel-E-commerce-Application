@@ -7,38 +7,37 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="#">
                 <i class="mdi mdi-sale menu-icon"></i>
                 <span class="menu-title">Sales</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-category" aria-expanded="false"
+            <a class="nav-link" data-bs-toggle="collapse" href="#sCategory" aria-expanded="false"
                 aria-controls="ui-category">
                 <i class="mdi mdi-view-list menu-icon"></i>
                 <span class="menu-title">Category</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-category">
+            <div class="collapse" id="sCategory">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category/create') }}">Add Category</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category/createC') }}">Add Category</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category') }}">Update Category</a>
                     </li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-product" aria-expanded="false"
-                aria-controls="ui-product">
-                <i class="mdi mdi-plus-circle menu-icon"></i>
-                <span class="menu-title">Products</span>
+            <a class="nav-link" data-bs-toggle="collapse" href="#sProducts" aria-expanded="false"
+                aria-controls="ui-products">
+                <i class="mdi mdi-account-multiple-plus menu-icon"></i>
+                <span class="menu-title">products</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-product">
+            <div class="collapse" id="sProducts">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="#">Product 1</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Product 2</a>
-                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/products/createP') }}">Add Product</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/products') }}">Update Products</a></li>
                 </ul>
             </div>
         </li>
@@ -57,19 +56,19 @@
             </a>
             <div class="collapse" id="ui-users">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Admin </a></li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Admin </a></li>
                     <li class="nav-item"> <a class="nav-link" href="#">Users</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="#">
                 <i class="mdi mdi-view-carousel menu-icon"></i>
                 <span class="menu-title">Home Silder</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="#">
                 <i class="mdi mdi-settings menu-icon"></i>
                 <span class="menu-title">Site Setting</span>
             </a>

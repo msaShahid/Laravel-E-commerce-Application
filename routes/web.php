@@ -30,13 +30,26 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function () {
     // Category Route
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
         Route::get('/category', 'index');
-        Route::get('/category/create', 'create');
+        Route::get('/category/createC', 'create');
         Route::post('/category', 'store');
         Route::get('/category/{category}/edit', 'edit');
         Route::put('/category/{category}','update');
         
     });  
 
+    // Product Route
+    Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
+        Route::get('/products', 'index');
+        Route::get('/products/createP', 'create');
+        Route::post('/products', 'store');
+        Route::get('/products/{product}/edit', 'edit');
+        Route::put('/products/{product}','update');
+        Route::get('/products/{product}/delete','destroy');
+        Route::get('/product-image/{product_image_id}/delete', 'destroyImage');
+        
+    });
+
+    // Brand Route
     Route::get('/brands',App\Http\Livewire\Admin\Brand\Index::class);
 
 });
