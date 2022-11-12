@@ -26,12 +26,12 @@ class CategoryController extends Controller
     // Insert Category function
     public function store(CategoryFormRequest $request){
 
-        $validatedDate = $request->validated();
+        $validatedData = $request->validated();
 
         $category = new Category;
-        $category->name = $validatedDate['name'];
-        $category->slug = $validatedDate['slug'];
-        $category->description = $validatedDate['description'];
+        $category->name = $validatedData['name'];
+        $category->slug = $validatedData['slug'];
+        $category->description = $validatedData['description'];
 
         if($request->hasFile('image')){
 
@@ -44,9 +44,9 @@ class CategoryController extends Controller
         }
         
 
-        $category->meta_title = $validatedDate['meta_title'];
-        $category->meta_keyword = $validatedDate['meta_keyword'];
-        $category->meta_description = $validatedDate['meta_description'];
+        $category->meta_title = $validatedData['meta_title'];
+        $category->meta_keyword = $validatedData['meta_keyword'];
+        $category->meta_description = $validatedData['meta_description'];
 
         $category->status = $request->status == true ? '1':'0';
 
@@ -64,13 +64,13 @@ class CategoryController extends Controller
     // Update Category function 
     public function update(CategoryFormRequest $request, $category){
 
-        $validatedDate = $request->validated();
-       // dd($validatedDate);
+        $validatedData = $request->validated();
+       // dd($validatedData);
         $category = Category::findOrFail($category);
 
-        $category->name = $validatedDate['name'];
-        $category->slug = $validatedDate['slug'];
-        $category->description = $validatedDate['description'];
+        $category->name = $validatedData['name'];
+        $category->slug = $validatedData['slug'];
+        $category->description = $validatedData['description'];
 
         if($request->hasFile('image')){
 
@@ -87,9 +87,9 @@ class CategoryController extends Controller
             $category->image = $filename;
         }
         
-        $category->meta_title = $validatedDate['meta_title'];
-        $category->meta_keyword = $validatedDate['meta_keyword'];
-        $category->meta_description = $validatedDate['meta_description'];
+        $category->meta_title = $validatedData['meta_title'];
+        $category->meta_keyword = $validatedData['meta_keyword'];
+        $category->meta_description = $validatedData['meta_description'];
 
         $category->status = $request->status == true ? '1':'0';
 

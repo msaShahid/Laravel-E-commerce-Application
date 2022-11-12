@@ -33,25 +33,25 @@ class ProductController extends Controller
 
     public function store(ProductFormRequest $request){
 
-        $validateDate = $request->validated();
+        $validatedData = $request->validated();
 
-        $category = Category::findOrFail($validateDate['category_id']);
+        $category = Category::findOrFail($validatedData['category_id']);
 
         $product =  $category->products()->create([
-            'category_id' => $validateDate['category_id'],
-            'name' => $validateDate['name'],
-            'slug' => Str::slug($validateDate['slug']),
-            'brand' => $validateDate['brand'],
-            'small_description' => $validateDate['small_description'],
-            'description' => $validateDate['description'],
-            'original_price' => $validateDate['original_price'],
-            'selling_price' => $validateDate['selling_price'],
-            'quantity' => $validateDate['quantity'],
+            'category_id' => $validatedData['category_id'],
+            'name' => $validatedData['name'],
+            'slug' => Str::slug($validatedData['slug']),
+            'brand' => $validatedData['brand'],
+            'small_description' => $validatedData['small_description'],
+            'description' => $validatedData['description'],
+            'original_price' => $validatedData['original_price'],
+            'selling_price' => $validatedData['selling_price'],
+            'quantity' => $validatedData['quantity'],
             'trending' => $request->trending == true ? '1':'0',
             'status' => $request->status == true ? '1':'0',
-            'meta_title' => $validateDate['meta_title'],
-            'meta_keyword' => $validateDate['meta_keyword'],
-            'meta_description' => $validateDate['meta_description'],
+            'meta_title' => $validatedData['meta_title'],
+            'meta_keyword' => $validatedData['meta_keyword'],
+            'meta_description' => $validatedData['meta_description'],
         ]);
 
        // return $product->id;
@@ -90,28 +90,28 @@ class ProductController extends Controller
     // Product data Update 
     public function update(ProductFormRequest $request, int $product_id){
 
-        $validateDate = $request->validated();
+        $validatedData = $request->validated();
 
-        $product = Category::findOrFail($validateDate['category_id'])
+        $product = Category::findOrFail($validatedData['category_id'])
                             ->products()->where('id',$product_id)->first();
 
         if($product){
 
             $product->update([
-                'category_id' => $validateDate['category_id'],
-                'name' => $validateDate['name'],
-                'slug' => Str::slug($validateDate['slug']),
-                'brand' => $validateDate['brand'],
-                'small_description' => $validateDate['small_description'],
-                'description' => $validateDate['description'],
-                'original_price' => $validateDate['original_price'],
-                'selling_price' => $validateDate['selling_price'],
-                'quantity' => $validateDate['quantity'],
+                'category_id' => $validatedData['category_id'],
+                'name' => $validatedData['name'],
+                'slug' => Str::slug($validatedData['slug']),
+                'brand' => $validatedData['brand'],
+                'small_description' => $validatedData['small_description'],
+                'description' => $validatedData['description'],
+                'original_price' => $validatedData['original_price'],
+                'selling_price' => $validatedData['selling_price'],
+                'quantity' => $validatedData['quantity'],
                 'trending' => $request->trending == true ? '1':'0',
                 'status' => $request->status == true ? '1':'0',
-                'meta_title' => $validateDate['meta_title'],
-                'meta_keyword' => $validateDate['meta_keyword'],
-                'meta_description' => $validateDate['meta_description'],
+                'meta_title' => $validatedData['meta_title'],
+                'meta_keyword' => $validatedData['meta_keyword'],
+                'meta_description' => $validatedData['meta_description'],
             ]);
 
             if($request->hasFile('image')){

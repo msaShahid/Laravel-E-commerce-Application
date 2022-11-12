@@ -28,6 +28,12 @@
     <!-- Livewire js -->
     @livewireStyles
 
+    <style>
+    .table th, .table td {
+    padding: 0.25rem 0.9375rem !important; 
+}
+    </style>
+
 </head>
 
 <body>
