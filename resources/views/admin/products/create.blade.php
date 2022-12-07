@@ -45,6 +45,11 @@
                                 data-bs-target="#image-tab-pane" type="button" role="tab" aria-controls="image-tab-pane"
                                 aria-selected="false">Product Images</button>
                         </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="image-tab" data-bs-toggle="tab"
+                                data-bs-target="#color-tab-pane" type="button" role="tab" aria-controls="color-tab-pane"
+                                aria-selected="false">Product Colors</button>
+                        </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade border p-3 show active" id="home-tab-pane" role="tabpanel"
@@ -140,6 +145,28 @@
                             <div class="mb-3">
                                 <label for="">Upload Product Image</label>
                                 <input type="file" multiple name="image[]" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade border p-3" id="color-tab-pane" role="tabpanel"
+                            aria-labelledby="details-tab" tabindex="0">
+                            <div class="mb-3">
+                                <label for="">Select Color and Quantity</label>
+                                <div class="row">
+                                    @forelse ($colors as $colorsItem)
+                                    <div class="col-sm-3">
+                                        <div class="mb-2 border border-2 p-2">
+                                            Color :  <input type="checkbox" name="colors[{{ $colorsItem->id }}]" class="" value="{{ $colorsItem->id }}"> {{ $colorsItem->name }}
+                                            <br/>
+                                            Quantity : <input type="number" name="colorQuantity[{{ $colorsItem->id }}]" class="col-sm-4">
+                                        </div>
+                                      
+                                    </div>                                       
+                                    @empty
+                                    <div class="col-md-12">
+                                        <h1>Colors not available!</h1>
+                                    </div>
+                                    @endforelse                                   
+                                </div>
                             </div>
                         </div>
                     </div>
